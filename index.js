@@ -87,6 +87,10 @@ app.post("/subscribe", (req, res) => {
   res.status(200).json({ success: true });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({ success: true });
+});
+
 app.post("/register", Authenticate.register);
 app.get("/verify-email", Authenticate.verifyEmail);
 app.post("/authenticate", Authenticate.authenticate);
@@ -187,7 +191,7 @@ app.post(
 app.get("/gettockenomicsByid", SiteTokenomics.gettockenomicsByid);
 
 ///////////////////////////////////////
-app.use(express.static("./build"));
+// app.use(express.static("./build"));
 
 // app.use("*", (req, res) => {
 //   res.sendfile("./build/index.html");
